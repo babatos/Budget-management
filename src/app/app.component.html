@@ -1,0 +1,5 @@
+<div id="header">
+    <app-budget [selectedCurrency]="selectedCurrency" ></app-budget>
+    <app-currency (onChangeCurrency)="onChangeCurrency($event)"  [currencies]="currencies"></app-currency>
+</div>
+<app-budget-form [selectedCurrency]="selectedCurrency"></app-budget-form>

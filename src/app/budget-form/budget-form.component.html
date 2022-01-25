@@ -1,0 +1,32 @@
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="Debit">
+      <div class="p-field">
+        <form [formGroup]="inputDebitForm" (ngSubmit)="handleDebit()">
+          <label for="debitAmount">Debit amount:</label><br/>
+          <p class="warning"
+          *ngIf="inputDebitForm.hasError('invalidDebit','debitFund')">
+            You do not have enough funds!
+          </p>
+          <input id="debitAmount" type="number"  min="0" formControlName="debitFund"/>
+          <br/>
+          <input class="button" type="submit"  value="submit"
+          [disabled]="!inputDebitForm.valid"
+          [ngClass]="{'disable':inputDebitForm.hasError('invalidDebit','debitFund')}" >
+        </form>
+    </div>
+  </mat-tab>
+  <mat-tab label="Credit">
+    <div class="p-field">
+      <form [formGroup]="inputCreditForm" (ngSubmit)="handleCredit()">
+        <label for="creditAmount">Credit amount:</label><br/>
+        <input id="creditAmount" type="number" min="0" formControlName="creditFund"/>
+        <br/>
+        <input  [disabled]="!inputCreditForm.valid" type="submit" class="button" value="Submit">
+      </form>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+
+
+
+

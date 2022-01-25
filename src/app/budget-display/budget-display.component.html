@@ -1,0 +1,21 @@
+<div id="displaybudget">
+    <div id="budget">
+        <h2>My budget:</h2>
+        <h1 [ngClass]="{
+        'default': true,
+        'warning':(_budgetservice.budget$ | async)<=500,
+        'alert':(_budgetservice.budget$ | async)<=100}">
+
+            <span *ngIf="selectedCurrency.position==='start'">
+                <span class="b-unit">{{selectedCurrency.symbol}}</span>
+                <span class="b-value">{{(_budgetservice.budget$ | async)}}</span>
+            </span>
+
+            <span *ngIf="selectedCurrency.position==='end'">
+                <span class="b-value">{{(_budgetservice.budget$ | async)}}</span>
+                <span class="b-unit">{{selectedCurrency.symbol}}</span>
+            </span>
+            
+        </h1>
+    </div>
+</div>

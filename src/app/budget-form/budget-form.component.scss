@@ -1,0 +1,23 @@
+.p-field{
+    padding-left: 600px;
+    input {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid lightgray;
+    }
+    .button {
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid black;
+        color: white;
+        background-color: rgb(9, 89, 207);
+    }
+    .warning{
+        color: red;
+        font-weight: bold;
+    }
+    .disable{
+        background-color: lightgray;
+    }
+}

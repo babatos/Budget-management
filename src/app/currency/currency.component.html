@@ -1,0 +1,5 @@
+<select [(ngModel)]="selectedCurrency" (ngModelChange)="handleChange()">
+  <option [ngValue]="null" selected disabled>Select Currency</option>
+  <option *ngFor="let item of currencies" [ngValue]="item">{{item.code}}</option>
+</select>
+
